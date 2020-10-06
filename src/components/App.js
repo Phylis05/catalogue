@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import DrinkList from '../containers/DrinksList';
 
 function App() {
   return (
-    <div className="App">
-      React-Redux
+    <div>
+      <DrinkList />
     </div>
   );
 }

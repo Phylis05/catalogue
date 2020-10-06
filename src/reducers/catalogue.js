@@ -18,30 +18,4 @@ const drinksReducer = (state = initialState, action) => {
   }
 };
 
-// const drinksReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case FETCH_DRINKS_REQUEST:
-//       return {
-//         ...state,
-//         loading: true,
-//       };
-//     case FETCH_DRINKS_SUCCESS:
-//       return {
-//         ...state,
-//         loading: false,
-//         drinks: action.payload,
-//         error: '',
-//       };
-//     case FETCH_DRINKS_FAILURE:
-//       return {
-//         ...state,
-//         loading: false,
-//         drinks: [],
-//         error: action.payload,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
 export default drinksReducer;
