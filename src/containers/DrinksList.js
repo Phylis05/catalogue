@@ -8,6 +8,7 @@ import CategoryFilter from '../components/Filter';
 const DrinkList = ({
   getDrinks, drinks, changeFilter, filter,
 }) => {
+  let customFilter = 'all';
   useEffect(() => {
     getDrinks();
   }, []);
@@ -15,16 +16,28 @@ const DrinkList = ({
   const handleFilterChange = e => {
     const { value } = e.target;
     changeFilter(value);
+    customFilter = value.toLowerCase();
   };
 
-  const filteredDrinks = () => (filter === 'ALL' ? drinks : drinks.filter(drink => {
-    const types = JSON.stringify(drink.strCategory);
+  const filteredDrinks = () => (
+    customFilter === 'all' ? drinks : drinks.filter(drink => {
+    const types = drink.strCategory.toLowerCase();
+    console.log(customFilter);
 
-    for (let i = 0; i < types.length; i += 1) {
-      if (types[i].strCategory === filter) return true;
+    if (types === customFilter) {
+      return true;
     }
     return false;
+
+    // for (let i = 0; i < types.length; i += 1) {
+    //   if (types === filter) return true;
+    // }
+    // return false;
   }));
+
+  // const filteredDrinks = filter => {
+  //   console.log(filter);
+  // };
 
   return (
     <div>
