@@ -1,9 +1,8 @@
-import { GET_DRINKS } from '../actions/actionTypes';
+import { GET_DRINKS, GET_DRINK } from '../actions/actionTypes';
 
 const initialState = {
-  loading: false,
   drinks: [],
-  error: '',
+  drink: {},
 };
 
 const drinksReducer = (state = initialState, action) => {
@@ -12,6 +11,12 @@ const drinksReducer = (state = initialState, action) => {
       return {
         ...state,
         drinks: action.payload,
+      };
+
+    case GET_DRINK:
+      return {
+        ...state,
+        pokemon: action.payload,
       };
     default:
       return state;
