@@ -1,10 +1,14 @@
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
 import DrinkList from '../containers/DrinksList';
 
 function App() {
   return (
-    <div>
+    <div className="container">
+      <div className="nav">
+        <h1>WINE CATALOGUE</h1>
+        <input type="text" placeholder="Search" />
+      </div>
       <DrinkList />
     </div>
   );
